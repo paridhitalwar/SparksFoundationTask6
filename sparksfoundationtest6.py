@@ -9,12 +9,18 @@ import time
 
 driver = webdriver.Chrome(ChromeDriverManager().install())
 driver.get("https://www.thesparksfoundationsingapore.org/")
+print("\n THE SPARKS FOUNDATION")
+print(" Web And Mobile Development Internship")
+print(" Task 6: Testing(Automated)")
+print("\n Website Being Tested: "+ driver.current_url)
 
 print("\nTest 1:")
 if driver.title:
-    print("\nTitle Verification Passed!: ", driver.title)
+    print("\nTitle Verification Successfully Passed!: ", driver.title)
 else:
     print("\nTitle Verification Failed!\n")
+
+print("\n **************************************************************************")
 
 print("\nTest 2:")
 try:
@@ -24,6 +30,8 @@ try:
 except NoSuchElementException:
     print('No logo is present!\n')
 
+print("\n **************************************************************************")
+
 print("Test 3:")
 try:
     driver.find_element_by_class_name("navbar")
@@ -31,12 +39,16 @@ try:
 except NoSuchElementException:
     print("Navbar Verification Failed!\n")
 
+print("\n **************************************************************************")
+
 print("Test 4:")
 try:
     driver.find_element_by_partial_link_text("The Sparks Foundation").click()
     print("Home link is working!\n")
 except NoSuchElementException:
     print("Home Link Doesn't Work!\n")
+
+print("\n **************************************************************************")
 
 print("Test 5:")
 try:
@@ -48,6 +60,8 @@ try:
 except NoSuchElementException:
     print("Page visit Failed! Does not exist.\n")
     time.sleep(3)
+
+print("\n **************************************************************************")
 
 print('Test 6:')
 try:
@@ -61,6 +75,8 @@ try:
 except NoSuchElementException:
     print('No New Tab opened. Failed!\n')
 
+print("\n **************************************************************************")
+
 print('Test 7:')
 try:
     driver.find_element_by_link_text('Student Scholarship Program').click()
@@ -72,6 +88,8 @@ try:
     print('Programs Page Verification Passed!\n')
 except NoSuchElementException:
     print('No New Tab opened. Failed!\n')
+
+print("\n **************************************************************************")
 
 print("Test 8:")
 try:
@@ -89,6 +107,8 @@ try:
 except NoSuchElementException:
     print("Contact Page Verification Unsuccessful!")
 
+print("\n **************************************************************************")
+
 print("Test 9:")
 try:
     driver.find_element_by_link_text('LINKS').click()
@@ -100,6 +120,8 @@ try:
     print('LINKS Verfication Passed!\n')
 except NoSuchElementException:
     print("LINKS Verification Failed!\n")
+
+print("\n **************************************************************************")
 
 print("Test 10:")
 try:
@@ -121,4 +143,6 @@ try:
 except NoSuchElementException:
     print("Form Verification Failed!\n")
     time.sleep(3)
+
+print("\n **************************************************************************")
 cls=driver.close()
